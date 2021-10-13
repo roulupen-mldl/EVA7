@@ -65,6 +65,8 @@ Apart from loss function(which measures the model performance), we have created 
 def get_num_correct(preds, labels):
    return preds.argmax(dim=1).eq(labels).sum().item()
 ```
+![Model Training Log](./ModelLog.png)
+
 In our example we are evaluating and model training on same data set but ideally for model evaluation we should have used a test data for better evaluation result.
 
 Assignment Google Colab Notebook:(https://github.com/roulupen-mldl/EVA7/blob/main/IntroToPytorch_Session2_5/Session_2_5_PyTorch_101.ipynb)

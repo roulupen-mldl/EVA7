@@ -38,3 +38,32 @@ Finally return the values by getitem method as (MNIST Image, random number input
 ![Model Summary](./ModelSummary.png)
 
 ## Model Training
+
+### Training on GPU:
+To train the model on GPU we must send the data to GPU, so we have used below lines to send our tensor in GPU.
+```
+# Sending the tensors to the GPU/CPU
+data, input_num, target = data.to(device), input_num.to(device), target.to(target)
+```
+**Training on GPU is much more faster than CPU.**
+
+### Loss Function:
+Our problem is a pure classification problem, first we are classifying digit then we are classifying digit sum.
+
+In case of classification problem our final log_softmax activation function provides a probability score for each class as shown in below example:
+![log_soft_max](./1_KvygqiInUpBzpknb-KVKJw.jpeg)
+
+But, the cross entropy function takes the probability scores and measures the distance from truth values as shown below:
+![cross_entropy](./1_rcvGMOuWLMpnNvJ3Oj7fPA.jpeg)
+
+So, that's the reason for choosing cross entropy loss function over other loss functions.
+
+### Result Evaluation:
+Apart from loss function(hich measures the model performance), there is a function called **get_num_correct** which takes the prediction and actual result and finds out how many are correct. 
+```
+# Find out number of correct predictions and number of wrong prediction
+def get_num_correct(preds, labels):
+   return preds.argmax(dim=1).eq(labels).sum().item()
+```
+In our example we are evaluating and model training on same data set but ideally for model evaluation we should have used a test data for better evaluation result.
+

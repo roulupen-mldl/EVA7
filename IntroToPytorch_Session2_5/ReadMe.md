@@ -29,6 +29,8 @@ Finally return the values by getitem method as (MNIST Image, random number input
 ![Model Summary](./Model.png)
 - As shown in the model summary the input image passes through the model first until it reaches a receptive field same as size of the image.
 - Then we perform reshape to convert 3D tensor into 2D.
+
+Assignment Google Colab Notebook: https://github.com/roulupen-mldl/EVA7/blob/main/IntroToPytorch_Session2_5/Session_2_5_PyTorch_101.ipynb 
 - Then we send to a fully connected layer for identifying relationship between different parts of images.
 - For the random number input, we pass it through a fully connected layer.
 - Next we concat the result of image fully conncted layer to random number fully conncted layer and in next step we pass the concatenated tensor into final fully conncted layer and make sure it returns same number of result as the number of actual classes.

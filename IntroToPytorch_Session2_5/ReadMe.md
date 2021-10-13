@@ -21,8 +21,20 @@ Steps for generating dataset:
 - Generate random number of size same as MNIST dataset length.
 - Generate one hot encoding for the random number which can sent to the model directly as input.
 - Calculate, sum of random number and MNIST target
-- Create a separate target tensor where the shape will be (len(MNIST images), 2), So if we sending 100 images for training then it will be (100, 2), the first value will be target for MNIST prediction and the second value will be the target for SUM.
+- Create a separate target tensor where the shape will be (len(MNIST images), 2), So if we sending 100 images for training then it will be (100, 2), the first value will be target for MNIST prediction and the second value will be the target for SUM. The output will have 29 classes, first 10 to predict MNIST number(0-9) and next 19 is to predict sum(0-18).
 
 Finally return the values by getitem method as (MNIST Image, random number input, concatenated sum)
 
 ## Model 
+![Model Summary](./Model.png)
+- As shown in the model summary the input image passes through the model first until it reaches a receptive field same as size of the image.
+- Then we perform reshape to convert 3D tensor into 2D.
+- Then we send to a fully connected layer for identifying relationship between different parts of images.
+- For the random number input, we pass it through a fully connected layer.
+- Next we concat the result of image fully conncted layer to random number fully conncted layer and in next step we pass the concatenated tensor into final fully conncted layer and make sure it returns same number of result as the number of actual classes.
+- Then we pass the result to log_softmax for final prediction.
+
+### Final Model Summary
+![Model Summary](./ModelSummary.png)
+
+## Model Training

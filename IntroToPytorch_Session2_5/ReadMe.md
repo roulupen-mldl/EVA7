@@ -61,7 +61,7 @@ But, the cross entropy function takes the probability scores and measures the di
 So, that's the reason for choosing cross entropy loss function over other loss functions.
 
 ### Result Evaluation:
-Apart from loss function(hich measures the model performance), there is a function called **get_num_correct** which takes the prediction and actual result and finds out how many are correct. 
+Apart from loss function(which measures the model performance), we have created a function called **get_num_correct** which takes the prediction and actual result as inputs and finds how many are correct predictions. 
 ```
 # Find out number of correct predictions and number of wrong prediction
 def get_num_correct(preds, labels):

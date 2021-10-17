@@ -5,9 +5,11 @@
 ## PART-2(CNN Model for MNIST digit classifier):
 
 **Model Architecture**:
+
 ![Model Architecture](./Model%20architecture.png)
 
 **Model Summary**:
+
 ![Model Summary](./ModelSummary.png)
 
 **Model Training Log:**

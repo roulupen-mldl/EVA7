@@ -11,6 +11,7 @@
 ![Model Summary](./ModelSummary.png)
 
 **Model Training Log:**
+
 loss=0.18191516399383545 LR: 0.010000000000000002 batch_id=468: 100%|██████████| 469/469 [00:27<00:00, 17.22it/s]
 
 Epoch:1 Test set: Average loss: 0.0005, Accuracy: 9805/10000 (98.05%)
